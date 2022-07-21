@@ -10,16 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Question }) {
-      Theme.hasMany(Question, { foreignKey: 'question_id' });
+      Theme.hasMany(Question, { foreignKey: 'theme_id' });
     }
   }
   Theme.init({
     title: {
       type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    question_id: {
-      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {

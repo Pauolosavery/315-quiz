@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Theme }) {
-      Question.belongsTo(Theme, { foreignKey: 'theme_id' });
+      Question.belongsTo(Theme, { foreignKey: 'question_id' });
     }
   }
   Question.init({
@@ -25,6 +25,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       defaultValue: 0,
       allowNull: false,
+    },
+    theme_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Themes',
+        key: 'id',
+      },
     },
   }, {
     sequelize,

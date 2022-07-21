@@ -21,6 +21,14 @@ module.exports = {
         defaultValue: 0,
         allowNull: false,
       },
+      theme_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Themes',
+          key: 'id',
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

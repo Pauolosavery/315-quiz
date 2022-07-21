@@ -14,6 +14,7 @@ module.exports = {
         question: 'Test?',
         answer: 'Test!',
         points: 100,
+        theme_id: 1,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
