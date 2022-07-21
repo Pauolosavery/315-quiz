@@ -1,18 +1,42 @@
-// import { useEffect} from "react";
+import './App.css';
+
+import quiz from '../../serverDB/server.js';
+
+import './App.css';
+import GameTable from "../GameTable/GameTable";
+import Navbar from "../Navbar/Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect} from "react";
+import { addQuizAC } from '../../redux/actionCreators/quizAC';
+
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-
-import './App.css';
-import GameTable from "../GameTable/GameTable";
-import Navbar from "../Navbar/Navbar";
 
 function App() {
-  // const dispatch = useDispatch()
-  // const { user } = useSelector(state => state.user)
+  
+  console.log("🚀 ~ file: App.jsx ~ line 5 ~ quiz", quiz)
+  const dispatch = useDispatch()
+  const { user } = useSelector(state => state.user)
+  useEffect(() => {
+    fetch('/', {
+      method: "GET",
+      credentials: 'include',
+      headers: {
+        'Content-type': 'application/json'
+      },
+    })
+      .then(res => res.json())
+      .then(quiz => dispatch(addQuizAC(quiz)))
+  }, [])
+
+  return (
+    <div className="App">
+
+function App() {
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,8 +45,10 @@ function App() {
           <Route path="/game" element={<GameTable />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }
 
 export default App;
+
