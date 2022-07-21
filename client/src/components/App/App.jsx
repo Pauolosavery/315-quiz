@@ -1,18 +1,21 @@
-
 import './App.css';
 
 import quiz from '../../serverDB/server.js';
 
+import './App.css';
+import GameTable from "../GameTable/GameTable";
+import Navbar from "../Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect} from "react";
+import { addQuizAC } from '../../redux/actionCreators/quizAC';
+
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import { addQuizAC } from '../../redux/actionCreators/quizAC';
 
-export function App() {
+function App() {
   
   console.log("🚀 ~ file: App.jsx ~ line 5 ~ quiz", quiz)
   const dispatch = useDispatch()
@@ -32,7 +35,20 @@ export function App() {
   return (
     <div className="App">
 
+function App() {
+
+  return (
+    <div className="App">
+      <BrowserRouter>
+      <Navbar/>
+        <Routes>
+          <Route path="/game" element={<GameTable />} />
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
+
+export default App;
 
