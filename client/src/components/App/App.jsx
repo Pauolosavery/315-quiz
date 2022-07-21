@@ -34,11 +34,6 @@ function App() {
 
   return (
     <div className="App">
-
-function App() {
-
-  return (
-    <div className="App">
       <BrowserRouter>
       <Navbar/>
         <Routes>
