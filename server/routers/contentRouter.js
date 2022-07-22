@@ -9,7 +9,7 @@ contentRouter.get('/quiz', async (req, res) => {
     raw: true,
     include: [Question.Themes ],
   });
-  // console.log("🚀 ~ file: contentRouter.js ~ line 12 ~ contentRouter.get ~ quest", quest)
+  console.log("🚀 ~ file: contentRouter.js ~ line 12 ~ contentRouter.get ~ quiz", quiz)
   // res.json({ themes, quest });
   res.json({ quiz });
 });
