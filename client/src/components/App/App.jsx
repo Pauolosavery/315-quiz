@@ -1,5 +1,3 @@
-
-
 import quiz from '../../serverDB/server.js';
 
 import './App.css';
