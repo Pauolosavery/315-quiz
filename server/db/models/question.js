@@ -16,6 +16,22 @@ module.exports = (sequelize, DataTypes) => {
     answer: {
       type: DataTypes.TEXT,
       allowNull: false,
+    },      
+    answerButton1: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    answerButton2: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    answerButton3: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    answerButton4: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     points: {
       type: DataTypes.INTEGER,

@@ -1,11 +1,12 @@
 import '../GameTable/GameTable_style.css'
-import { Link } from "react-router-dom";
+
+// import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { addQuizAC } from '../../redux/actionCreators/quizAC.js';
 import { UPD } from '../../redux/actionTypes/quizAT.js';
 
-
+import ButtonQuestion from '../ButtonQuestion/ButtonQuestion.jsx';
 
 
 function GameTable() {
@@ -18,10 +19,7 @@ function GameTable() {
           // console.log(quiz);
         dispatch(addQuizAC(res.quiz))
       })
-      
   }
-
-  
   useEffect( () => {
     addQuestions()
     return () => dispatch( { type: UPD} )
@@ -41,24 +39,15 @@ function GameTable() {
           </tr>
 
           <tr>
-            {quiz.map((e)=>{
+            {quiz.map((question)=>
               <tr>
-                <td>{e.question}</td>
-                <td>{e["Theme.title"]}</td>
+                <td>{question["Theme.title"]}</td>
+                <td> 
+                  <ButtonQuestion key={quiz.uniq} question={question} size="large"/>
+                </td>                
               </tr>
-          })}
-          </tr>
-          <tr>
-            <td>Тупые</td>
-            <td> <Link to='/game/:id'>100</Link></td>
-            <td> <Link to='/game/:id'>200</Link></td>
-            <td> <Link to='/game/:id'>500</Link></td>
-          </tr>
-          <tr>
-            <td>Айтишечка</td>
-            <td> <Link to='/game/:id'>100</Link></td>
-            <td> <Link to='/game/:id'>200</Link></td>
-            <td> <Link to='/game/:id'>500</Link></td>
+              )
+            }
           </tr>
         </table>
       </div>
