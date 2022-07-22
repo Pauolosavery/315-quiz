@@ -9,13 +9,17 @@ import { UPD } from '../../redux/actionTypes/quizAT.js';
 
 
 function GameTable() {
-
   const dispatch = useDispatch();
-  const { quiz } = useSelector(state => state.quiz)
+  // const { quiz } = useSelector(state => state.quiz)
   const addQuestions = () => {
     fetch('http://localhost:4000/')
       .then(res => res.json())
-      .then(data => dispatch(addQuizAC(data.message)))
+      .then(data => {
+          console.log(data);
+        dispatch(addQuizAC(data.message))
+      
+      })
+      
   }
 
   useEffect( () => {
@@ -35,12 +39,12 @@ function GameTable() {
             <br></br>
             <th>В О П Р О С Ы</th>
           </tr>
-            {state.quiz.map(()=>{
+            {/* {quest.map(()=>{
               <tr>
-                <td>{quiz.question}</td>
-                <td>{quiz.questionText_1}</td>
+                <td>{quest.question}</td>
+                <td>{quest.questionText_1}</td>
               </tr>
-          })}
+          })} */}
           
           
           <tr>
