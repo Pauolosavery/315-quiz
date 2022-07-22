@@ -13,6 +13,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Backvideo from '../Backvideo/Backvideo.jsx';
 
 function App() {
   
@@ -36,6 +37,7 @@ function App() {
 
       <BrowserRouter>
       <Navbar/>
+      <Backvideo/>
         <Routes>
           <Route path="/game" element={<GameTable />} />
           <Route path="/reg" element={<Registration />} />
