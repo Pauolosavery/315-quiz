@@ -1,4 +1,4 @@
-import './App.css';
+
 
 import quiz from '../../serverDB/server.js';
 
@@ -34,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+
       <BrowserRouter>
       <Navbar/>
         <Routes>
