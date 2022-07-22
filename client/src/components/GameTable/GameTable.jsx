@@ -21,6 +21,7 @@ function GameTable() {
       
   }
 
+  
   useEffect( () => {
     addQuestions()
     return () => dispatch( { type: UPD} )
