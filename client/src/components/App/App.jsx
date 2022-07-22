@@ -7,8 +7,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import './App.css';
-import GameTable from "../GameTable/GameTable";
-import Navbar from "../Navbar/Navbar";
+import GameTable from "../GameTable/GameTable.jsx";
+import Navbar from "../Navbar/Navbar.jsx";
 
 function App() {
   // const dispatch = useDispatch()
