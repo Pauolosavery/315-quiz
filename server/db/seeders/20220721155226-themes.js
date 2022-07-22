@@ -14,7 +14,6 @@ module.exports = {
         title: 'Test',
         createdAt: new Date(),
         updatedAt: new Date(),
-        question_id: 1,
       },
     ];
     await queryInterface.bulkInsert('Themes', arr, {});

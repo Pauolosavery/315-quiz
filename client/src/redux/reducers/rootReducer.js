@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
-// import photoReducer from './photoReducer'
-// import userReducer from './userReducer'
+
+import quizReducer from './quizReducer'
+import userReducer from './userReducer'
 
 
 const rootReducer = combineReducers({
-//  photos:photoReducer,
-//  user:userReducer
+ quiz: quizReducer,
+ user: userReducer
 })
 
 export default rootReducer

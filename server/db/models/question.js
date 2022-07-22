@@ -26,6 +26,14 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 0,
       allowNull: false,
     },
+    theme_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'Themes',
+        key: 'id',
+      },
+    },
   }, {
     sequelize,
     modelName: 'Question',
