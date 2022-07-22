@@ -38,17 +38,17 @@ function GameTable() {
             <th>&nbsp;В О П Р О С Ы&nbsp;</th>
           </tr>
 
-          <tr>
+          
             {quiz.map((question)=>
               <tr>
                 <td>{question["Theme.title"]}</td>
-                <td> 
-                  <ButtonQuestion key={quiz.uniq} question={question} size="large"/>
-                </td>                
+                &nbsp;
+                &nbsp;
+                <td> <ButtonQuestion key={quiz.uniq} question={question} size="large"/></td>                
               </tr>
               )
             }
-          </tr>
+          
         </table>
       </div>
     </>
