@@ -15,7 +15,7 @@ function Navbar({setunmountVideo, unmountVideo}) {
         <ul>
           <li><Link to='/game' >START GAME</Link></li>
           <li><Link to='/login' >Log in</Link></li>
-          <li><Link to ='/registration' >Register</Link></li>
+          <li><Link to ='/reg' >Register</Link></li>
         </ul>
       </header>
     </>
