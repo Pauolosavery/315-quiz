@@ -33,9 +33,11 @@ function GameTable() {
       <div className='container'>
         <table>
           <tr>
-            <th>Т Е М Ы</th>
+            <th>&nbsp;Т Е М Ы&nbsp;</th>
             <br></br>
-            <th>В О П Р О С Ы</th>
+           
+           
+            <th>&nbsp;В О П Р О С Ы&nbsp;</th>
           </tr>
 
           <tr>
