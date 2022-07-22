@@ -5,6 +5,7 @@ import quiz from '../../serverDB/server.js';
 import './App.css';
 import GameTable from "../GameTable/GameTable";
 import Navbar from "../Navbar/Navbar";
+import Registration from "../Registration/Registration.jsx"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect} from "react";
 import { addQuizAC } from '../../redux/actionCreators/quizAC';
@@ -39,6 +40,7 @@ function App() {
       <Navbar/>
         <Routes>
           <Route path="/game" element={<GameTable />} />
+          <Route path="/reg" element={<Registration />} />
         </Routes>
       </BrowserRouter>
 
