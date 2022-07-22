@@ -3,7 +3,7 @@ const contentRouter = require('express').Router();
 // const { Theme } = require('../db/models');
 const { Question } = require('../db/models');
 
-contentRouter.get('/', async (req, res) => {
+contentRouter.get('/quiz', async (req, res) => {
   // const themes = await Theme.findAll({ raw: true });
   const quiz = await Question.findAll({ 
     raw: true,

@@ -10,14 +10,13 @@ import { UPD } from '../../redux/actionTypes/quizAT.js';
 
 function GameTable() {
   const dispatch = useDispatch();
-  // const { quiz } = useSelector(state => state.quiz)
+  const { quiz } = useSelector(state => state.quiz)
   const addQuestions = () => {
-    fetch('http://localhost:4000/')
+    fetch('/quiz')
       .then(res => res.json())
-      .then(data => {
-          console.log(data);
-        dispatch(addQuizAC(data.message))
-      
+      .then(res => {
+          // console.log(quiz);
+        dispatch(addQuizAC(res.quiz))
       })
       
   }
@@ -27,9 +26,7 @@ function GameTable() {
     return () => dispatch( { type: UPD} )
   }, [dispatch])
 
-
-
-
+  console.log("🚀 ~ file: GameTable.jsx ~ line 44 ~ {quiz.map ~ quiz", quiz)
   return (
     <>
       <div className='container'>
@@ -39,19 +36,14 @@ function GameTable() {
             <br></br>
             <th>В О П Р О С Ы</th>
           </tr>
-            {/* {quest.map(()=>{
-              <tr>
-                <td>{quest.question}</td>
-                <td>{quest.questionText_1}</td>
-              </tr>
-          })} */}
-          
-          
+
           <tr>
-            <td>Эльбрус</td>
-            <td> <Link to='/game/:id'>100</Link></td>
-            <td> <Link to='/game/:id'>200</Link></td>
-            <td> <Link to='/game/:id'>500</Link></td>
+            {quiz.map((e)=>{
+              <tr>
+                <td>{e.question}</td>
+                <td>{e["Theme.title"]}</td>
+              </tr>
+          })}
           </tr>
           <tr>
             <td>Тупые</td>
