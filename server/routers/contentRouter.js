@@ -1,6 +1,6 @@
 const contentRouter = require('express').Router();
 
-// const { Theme } = require('../db/models');
+const { Theme } = require('../db/models');
 const { Question } = require('../db/models');
 
 contentRouter.get('/quiz', async (req, res) => {
@@ -14,4 +14,9 @@ contentRouter.get('/quiz', async (req, res) => {
   res.json({ quiz });
 });
 
+contentRouter.get('/quiz', async (req, res) => {
+    const themes = await Theme.findAll({ raw: true });
+    res.json({ themes });
+
+  });
 module.exports = contentRouter;
