@@ -10,6 +10,7 @@ const quizReducer = (state = { quiz: [] }, action) => {
 
     // приходит запрос с №темы, 
     case CHECK_ANSWER:
+      
       return { ...state, quiz: state.quiz.map(photo => photo.id === action.payload ? { ...photo, likes: photo.likes + 1 } : photo) }
 
     case UPD:
