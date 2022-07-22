@@ -1,0 +1,101 @@
+module.exports = {
+  async up (queryInterface, Sequelize) {
+
+     const arr = [
+      {
+        question: 'Какой национальный вид спорта Канады?',
+        answer: 'Лакросс',
+        answerButton1: 'Боулинг',
+        answerButton2: 'Лакросс',
+        answerButton3: 'Баскетбол',
+        answerButton4: 'Футбол',
+        points: 100,
+        theme_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'Какой боксер был известен как “The Greatest” и “The People’s Champion”?',
+        answer: 'Мухаммед Али',
+        answerButton1: 'Майк Тайсон',
+        answerButton2: 'Мухаммед Али',
+        answerButton3: 'Флойд Мейвезер',
+        answerButton4: 'Оскар Дела Хойя',
+        points: 200,
+        theme_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'Сколько минут длится матч по регби?',
+        answer: 'Восемьдесят минут',
+        answerButton1: 'Восемьдесят минут',
+        answerButton2: 'Тридцать минут',
+        answerButton3: 'Сто двадцать минут',
+        answerButton4: 'Шестьдесят минут',
+        points: 400,
+        theme_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'В какой стране были проведены первые Олимпийские игры?',
+        answer: 'Греция',
+        answerButton1: 'Италия',
+        answerButton2: 'Афины',
+        answerButton3: 'Македония',
+        answerButton4: 'Греция',
+        points: 800,
+        theme_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'В сиквеле какого праздничного фильма снялся Дональд Трамп?',
+        answer: 'Один дома 2: Затерянный в Нью-Йорке',
+        answerButton1: 'Один дома',
+        answerButton2: 'Один дома 2: Затерянный в Нью-Йорке',
+        answerButton3: 'Ричи Рич',
+        answerButton4: 'Маленькие негодяи',
+        points: 100,
+        theme_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'Что является национальным животным Шотландии?',
+        answer: 'Единорог',
+        answerButton1: 'Лошадь',
+        answerButton2: 'Единорог',
+        answerButton3: 'Волк',
+        answerButton4: 'Корова',
+        points: 200,
+        theme_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'Какая страна производит больше всего кофе в мире?',
+        answer: 'Бразилия',
+        answerButton1: 'Колумбия',
+        answerButton2: 'Индонезия',
+        answerButton3: 'Бразилия',
+        answerButton4: 'Вьетнам',
+        points: 400,
+        theme_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },      {
+        question: 'Какой газированный напиток первым был взят в космос?',
+        answer: 'Кока-Кола',
+        answerButton1: 'Пепси',
+        answerButton2: 'Фанта',
+        answerButton3: 'Кока-Кола',
+        answerButton4: 'Снапл',
+        points: 800,
+        theme_id: 2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ];
+    await queryInterface.bulkInsert('Questions', arr, {});
+  },
+  
+  async down (queryInterface, Sequelize) {
+
+  }
+};
