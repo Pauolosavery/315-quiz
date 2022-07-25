@@ -5,45 +5,50 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useDispatch, useSelector } from 'react-redux'
+//  { useEffect, useState } from 'react';
 
-import { CHECK_ANSWER } from '../../redux/actionTypes/quizAT';
+export default function MediaCard({ _id, setAnswer }) {
+    const { quiz } = useSelector(state => state.quiz)
 
-export default function MediaCard({ question }) {
-    const dispatch = useDispatch()
-    const [answer, setAnswer] = useState();
-    function checkAnswer() {
-        console.log("🚀 ~ file: Card.jsx ~ line 15 ~ checkAnswer ~ answer", answer)
-        dispatch({ type: 'CHECK_ANSWER', payload: answer })
-    }
+    const regex = /(<([^>]+)>)/ig
+    const result = quiz[_id - 1].answer.replace(regex, '')
+
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: "100%" }}>
+            <Button
+                onClick={setAnswer}
+            >
+                CLOSE
+            </Button>
             <CardMedia
                 component="img"
-                height="140"
-                image="https://picsum.photos/200/300"
+                height="auto"
+                image={`/questions_img/${_id}.png`}
                 alt="green iguana"
+                style={{ position: "absolut", width: "90%" }}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {question.question}
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    style={{ textAlign: "justify", padding: "3%" }}
+                >
+                    {result}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" onClick={()=>{
-                    checkAnswer();
-                    // useState((prev)=> !prev)
-                }}>{question.answerButton1}</Button>
-                <Button size="small">{question.answerButton2}</Button>
-                <Button size="small">{question.answerButton3}</Button>
-                <Button size="small">{question.answerButton4}</Button>
+                <Button
+                    onClick={setAnswer}
+                >
+                    CLOSE
+                </Button>
             </CardActions>
         </Card>
     );
 }
-
-// commit

@@ -1,22 +1,22 @@
 import '../Navbar/Navbar_style.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { regUserAC } from "../../redux/actionCreators/userAC";
 
+import { pink } from '@mui/material/colors';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import Button from '@mui/material/Button';
 
-function Navbar({setunmountVideo, unmountVideo}) {
-
-
-
+function Navbar({ setunmountVideo, unmountVideo }) {
+  const dispatch = useDispatch()
+  const { user } = useSelector(state => state.user)
+  const navigate=useNavigate()
 
   return (
     <>
       <header>
-        <Link to ='/Home' className='logo'>W E L C O M E &nbsp; to &nbsp;  V I C T O R I U S</Link>
-        
-        <ul>
-          <li><Link to='/game' >START GAME</Link></li>
-          <li><Link to='/login' >Log in</Link></li>
-          <li><Link to ='/reg' >Register</Link></li>
-        </ul>
+        <Link to='/' className='logo'>WELCOME &nbsp; TO &nbsp; REACT QUIZ</Link>
       </header>
     </>
   );
